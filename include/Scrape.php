@@ -35,7 +35,7 @@ function scrape_dfrn($url, $max_nodes=3500) {
 	$timeout = 10; //Timeout will affect batch processing.
 	
 	//Try and cheat our way into faster profiles.
-	if(strpos($url, 'tab=profile') === false){
+	if ((strpos($url, 'tab=profile') === false) && (strpos($url, 'about') === false)) {
 		$url .= (strpos($url, '?') > 0 ? '&' : '?').'tab=profile';
 	}
 	
